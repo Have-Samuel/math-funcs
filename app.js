@@ -4,12 +4,14 @@ function startGame() {
   console.log('The Game starts!...');
 }
 
-const greet = {
-  greet: function what() {
-    console.log('Hello There!');
-  }
-};
+// const greet = {
+//   greet: function what() {
+//     console.log('Hello There!');
+//   }
+// };
 
-greet.greet();
+// console.dir(startGame);
+
+// greet.greet();
 
 startGameBtn.addEventListener('click', startGame);
