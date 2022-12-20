@@ -1,7 +1,5 @@
 /* eslint-disable no-else-return */
 /* eslint-disable prefer-arrow-callback */
-/* eslint-disable func-names */
-/* eslint-disable no-console */
 const startGameBtn = document.getElementById('start-game-btn');
 
 const ROCK = 'ROCK';
@@ -38,20 +36,28 @@ function getComputerChoice() { // computer choice
   }
 }
 
-const getWinner = function (cChoice, pChoice) {
-  if (cChoice === pChoice) {
-    return RESULT_DRAW;
-  } else if (cChoice === ROCK && pChoice === PAPER
-    || cChoice === PAPER && pChoice === SCISSORS
-    || cChoice === SCISSORS && pChoice === ROCK
-  ) {
-    return RESULT_PLAYER_WINS;
-  } else {
-    return RESULT_COMPUTER_WINS;
-  }
-};
+const getWinner = (cChoice, pChoice) =>
+  cChoice === pChoice
+    ? RESULT_DRAW
+    : (cChoice === ROCK && pChoice === PAPER) ||
+      (cChoice === PAPER && pChoice === SCISSORS) ||
+      (cChoice === SCISSORS && pChoice === ROCK)
+      ? RESULT_PLAYER_WINS
+      : RESULT_COMPUTER_WINS;
 
-startGameBtn.addEventListener('click', function() {
+// if (cChoice === pChoice) {
+//   return RESULT_DRAW;
+// } else if (
+//   (cChoice === ROCK && pChoice === PAPER)
+//   || (cChoice === PAPER && pChoice === SCISSORS)
+//   || (cChoice === SCISSORS && pChoice === ROCK)
+// ) {
+//   return RESULT_PLAYER_WINS;
+// } else {
+//   return RESULT_COMPUTER_WINS;
+// }
+
+startGameBtn.addEventListener('click', () => {
   if (gameIsRunning) {
     return;
   }
