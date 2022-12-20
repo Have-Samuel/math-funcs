@@ -1,3 +1,7 @@
+/* eslint-disable no-else-return */
+/* eslint-disable prefer-arrow-callback */
+/* eslint-disable func-names */
+/* eslint-disable no-console */
 const startGameBtn = document.getElementById('start-game-btn');
 
 const ROCK = 'ROCK';
@@ -37,7 +41,8 @@ const getWinner = function (cChoice, pChoice) {
     return RESULT_DRAW;
   } else if (cChoice === ROCK && pChoice === PAPER
     || cChoice === PAPER && pChoice === SCISSORS
-    || cChoice === SCISSORS && pChoice === ROCK) {
+    || cChoice === SCISSORS && pChoice === ROCK
+  ) {
     return RESULT_PLAYER_WINS;
   } else {
     return RESULT_COMPUTER_WINS;
