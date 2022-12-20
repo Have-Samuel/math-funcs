@@ -33,7 +33,9 @@ function getComputerChoice() { // computer choice
     return ROCK;
   } else if (randonValue < 0.64) {
     return PAPER;
-  } else SCISSORS;
+  } else {
+    return SCISSORS;
+  }
 }
 
 const getWinner = function (cChoice, pChoice) {
